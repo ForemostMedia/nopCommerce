@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Nop.Web.Framework.Mvc.ModelBinding;
 using Nop.Web.Framework.Models;
@@ -34,6 +35,14 @@ namespace Nop.Plugin.Pickup.PickupInStore.Models
         [NopResourceDisplayName("Plugins.Pickup.PickupInStore.Fields.Store")]
         public int StoreId { get; set; }
         public string StoreName { get; set; }
+
+        [UIHint("DecimalNullable")]
+        [NopResourceDisplayName("Plugins.Pickup.PickupInStore.Fields.Latitude")]
+        public decimal? Latitude { get; set; }
+
+        [UIHint("DecimalNullable")]
+        [NopResourceDisplayName("Plugins.Pickup.PickupInStore.Fields.Longitude")]
+        public decimal? Longitude { get; set; }
     }
 
     public class AddressModel
